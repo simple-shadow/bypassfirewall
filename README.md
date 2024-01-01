@@ -6,6 +6,14 @@ SCRIPT=$(curl -sSL https://raw.githubusercontent.com/simple-shadow/bypassfirewal
 ```
 SCRIPT=$(curl -sSL https://raw.githubusercontent.com/simple-shadow/bypassfirewall/main/GenHysteriaConf.sh) && echo "$SCRIPT" | bash -
 ```
+# 2.2 install hysteria
+```
+bash <(curl -fsSL https://get.hy2.sh/)
+```
+# 2.3 run hysteria
+```
+hysteria server -c config.yaml
+```
 # 3.1 build xray in xui
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
