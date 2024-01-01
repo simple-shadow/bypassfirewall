@@ -10,18 +10,18 @@ password=$(openssl rand -base64 12)
 file_content="# listen: :443 
 domain=\"$domain\"
 tls:
-  cert: ${domain}.crt
-  key: ${domain}.key
+ cert: ${domain}.crt
+ key: ${domain}.key
 
 auth:
-  type: password
-  password: $password
+ type: password
+ password: $password
 
 masquerade: 
-  type: proxy
-  proxy:
-    url: https://bing.com
-    rewriteHost: true"
+ type: proxy
+ proxy:
+  url: https://bing.com
+  rewriteHost: true"
 
 # 将文件内容写入文件
 echo "$file_content" > config.yaml
