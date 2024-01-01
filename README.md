@@ -14,8 +14,6 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 ## ⚠️：Disclaimer
 
-Disclaimer
-
 This repository provides scripts for setting up proxy/VPN services with the purpose of helping users access restricted resources on the Internet. We understand that proxy/VPN services are illegal in certain countries and regions, thus we strongly advise you to carefully read and obey local laws and regulations before using this repository.
 
 We are not responsible for any legal consequences resulting from the use of this repository. Please carefully consider the risks before using this repository and make sure that you are capable of assuming the legal consequences resulting from it.
