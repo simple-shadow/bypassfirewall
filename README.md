@@ -14,6 +14,25 @@ bash <(curl -fsSL https://get.hy2.sh/)
 ```
 hysteria server -c config.yaml
 ```
+# optional(config systemctl):
+```
+sudo tee /etc/systemd/system/hysteria.service<<EOF >/dev/null
+[Unit]
+Description=Hysteria VPN Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hysteria server -c /etc/hysteria/config.yaml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl start hysteria
+sudo systemctl enable hysteria
+```
 # 3.1 build xray in xui
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
