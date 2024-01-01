@@ -7,8 +7,8 @@ domain="bing.com"
 password=$(openssl rand -base64 12)
 
 # 生成文件内容
-file_content="# listen: :443 
-domain=\"$domain\"
+file_content="# listen: :443
+domain: ${domain}
 tls:
  cert: ${domain}.crt
  key: ${domain}.key
@@ -17,7 +17,7 @@ auth:
  type: password
  password: $password
 
-masquerade: 
+masquerade:
  type: proxy
  proxy:
   url: https://bing.com
