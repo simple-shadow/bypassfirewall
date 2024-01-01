@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定义域名变量
-domain="example.com"
+domain="bing.com"
 
 # 生成密码
 password=$(openssl rand -base64 12)
