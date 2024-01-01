@@ -12,7 +12,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 ```
 # 2.3 run hysteria
 ```
-hysteria server -c config.yaml
+hysteria server -c ~/config.yaml
 ```
 # optional(config systemctl):
 ```
@@ -23,7 +23,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/hysteria server -c /etc/hysteria/config.yaml
+ExecStart=/usr/local/bin/hysteria server -c ~/config.yaml
 Restart=on-failure
 
 [Install]
