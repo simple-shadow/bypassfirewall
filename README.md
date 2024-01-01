@@ -24,7 +24,5 @@ We are not responsible for any damage caused to your devices or data as a result
 
 We are not responsible for any privacy leaks or other security issues resulting from the use of this repository. Please make sure you have sufficient network security knowledge and take proper measures to protect your privacy and security before using it.
 
-If you have any questions or concerns, please feel free to contact us. We will do our best to help you.
-
 This disclaimer may be updated or revised at any time without further notice. Please visit this page regularly to keep yourself informed on the latest disclaimer.
 
