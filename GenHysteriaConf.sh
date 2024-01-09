@@ -26,5 +26,15 @@ masquerade:
 # 将文件内容写入文件
 echo "$file_content" > config.yaml
 
-# 输出成功信息
-echo "配置文件已生成，文件名为 config.yaml"
+# 获取ipv6或ipv4地址
+ip=$(curl -s https://ipv4.icanhazip.com)
+
+# 判断 防火墙有无iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+# ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+if iptables -t nat -L | grep ":20000:50000" &>/dev/null || ip6tables -t nat -L | grep ":20000:50000" &>/dev/null; then
+  # 如果有则输出ipv6或ipv4地址和密码
+  echo "hy2://${password}@[${ip}]:443/?mport=443%2C20000-50000&sni=${domain}#M-Hysteria2"
+else
+  # 如果没有则输出ipv6或ipv4地址和密码及insecure=1参数
+  echo "hy2://${password}@[${ip}]:443/?insecure=1&sni=${domain}#Misaka-Hysteria2"
+fi
