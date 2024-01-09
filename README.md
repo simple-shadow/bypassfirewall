@@ -1,26 +1,37 @@
-# 1.Genreate self-signed cert
+# Index
+1. Is inital jobs
+2. About Hysteria
+3. About vless/trojan/vmess/shadowsocks(tcp protocol)
+## 1.Genreate self-signed cert
 ```
 SCRIPT=$(curl -sSL https://raw.githubusercontent.com/simple-shadow/bypassfirewall/main/SelfSignCert.sh) && echo "$SCRIPT" | bash -
 ```
-# 2.1 hysteria config
+## 2.1 hysteria config
 ```
 SCRIPT=$(curl -sSL https://raw.githubusercontent.com/simple-shadow/bypassfirewall/main/GenHysteriaConf.sh) && echo "$SCRIPT" | bash -
 ```
-# 2.2 install hysteria
+## 2.2 install hysteria
 ```
 bash <(curl -fsSL https://get.hy2.sh/)
 ```
-# 2.3 run hysteria
+## 2.3 set hysteria port-hopping
+```
+iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+```
+```
+ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+```
+## 2.4 run hysteria
 ```
 hysteria server -c ~/config.yaml
 ```
-# 3.1 build xray in xui
+## 3.1 build xray in xui
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
 ```
 🔔More web panel refer to https://github.com/XTLS/Xray-core/blob/main/README.md
 
-## ⚠️：Disclaimer
+# ⚠️：Disclaimer
 
 This repository provides scripts for setting up proxy/VPN services with the purpose of helping users access restricted resources on the Internet. We understand that proxy/VPN services are illegal in certain countries and regions, thus we strongly advise you to carefully read and obey local laws and regulations before using this repository.
 
